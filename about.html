@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Brew & Coffee • About Us</title>
+  <style>
+    :root {
+      --beige: #F5F0E6;
+      --gold: #C7A140;
+      --espresso: #5A3C28;
+      --ink: #2B1B0F;
+      --foam: #FFFFFF;
+    }
+    body { margin:0; padding:0; font-family:"Times New Roman", serif; background:var(--beige); color:var(--ink); scroll-behavior: smooth; }
+    header { position: sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background-color:#f5f0e6cc; border-bottom:2px solid var(--gold); z-index:10; }
+    .container { max-width:1120px; margin:0 auto; padding:24px 20px; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:700; color:var(--espresso); font-size:1.15rem; }
+    .brand .logo { width:36px; height:36px; border-radius:8px; background:linear-gradient(145deg,#a06b3b,#7b4b2a); display:grid; place-items:center; color:#fff; font-weight:900; }
+    nav a { color:var(--ink); text-decoration:none; margin:0 10px; padding:8px 10px; border-radius:8px; }
+    nav a:hover { background:var(--gold); color:#000; }
+    h1, h2 { color:var(--espresso); margin:0 0 16px;}
+    .hero { background:linear-gradient(135deg, #fff6e5, #f5f0e6); padding:40px 20px; border-radius:12px; }
+    .section { padding:40px 0; border-top:2px solid var(--gold); }
+    .card { background:var(--foam); border-radius:12px; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.05); margin-bottom:20px; }
+    ul { padding-left:20px; }
+    footer { padding:24px 0; border-top:2px solid var(--gold); text-align:center; font-size:0.95rem; background:var(--foam); }
+    .muted { opacity:.8; }
+    .highlight { background:var(--gold); color:#000; padding:4px 10px; border-radius:8px; font-weight:bold; }
+    .gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:16px; margin-top:20px; }
+    .image-card { background:var(--foam); border-radius:12px; overflow:hidden; box-shadow:0 3px 8px rgba(0,0,0,0.06); text-align:center; }
+    .image-card img { width:100%; height:auto; display:block; }
+    .image-card p { margin:10px; font-size:0.95rem; color:var(--espresso); }
+    @media (max-width:900px) { .hero { padding:30px 10px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo">☕</span> Brew & Coffee</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="loyalty.html">Loyalty</a>
+        <a href="activities.html">Activities</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>About Us</h1>
+      <p>Brew & Coffee is a warm, welcoming space for students who need a place to <strong>study, relax, and connect</strong>. With free Wi‑Fi and charging points, we believe learning happens anywhere.</p>
+    </section>
+
+    <section class="section">
+      <h2>Our Mission</h2>
+      <div class="card">
+        <ul>
+          <li>Provide a student‑centric café right on campus</li>
+          <li>Offer high‑speed, reliable Wi‑Fi and easily accessible outlets</li>
+          <li>Create meaningful part‑time job opportunities for students</li>
+          <li>Host weekly events for socializing, networking & learning</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>See the Space</h2>
+      <div class="gallery">
+        <div class="image-card">
+          <img src="images/cafe1.jpg" alt="Students with laptops and notebooks" />
+          <p>🔌 Study‑friendly setup with power outlets</p>
+        </div>
+        <div class="image-card">
+          <img src="images/cafe2.jpg" alt="Bookshelf seating area" />
+          <p>📚 Minimalist bookshelf seating with great natural light</p>
+        </div>
+        <div class="image-card">
+          <img src="images/cafe3.jpg" alt="Wicker and cozy café chairs" />
+          <p>🪑 Wicker & cozy furniture — warm, inviting vibe</p>
+        </div>
+        <div class="image-card">
+          <img src="images/cafe4.jpg" alt="Counter and display with soft lights" />
+          <p>💡 Artistic lighting with student‑budget desserts</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Why We Exist</h2>
+      <div class="card">
+        <p>We’re built for students, by students — because campus life isn’t just classes, it’s where you explore, socialise, grow. Here are just a few things that make us different:</p>
+        <ul>
+          <li>Free Wi‑Fi & multiple charging points</li>
+          <li>Affordable drinks and snacks</li>
+          <li>Part‑time jobs designed around your schedule</li>
+          <li>Events & spaces built for studying *and* chilling</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> Brew & Coffee — Bukhara State University
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

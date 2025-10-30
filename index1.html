@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brew & Coffee • Home</title>
+  <style>
+    :root {
+      --beige: #F5F0E6;
+      --gold: #C7A140;
+      --espresso: #5A3C28;
+      --ink: #2B1B0F;
+      --foam: #FFFFFF;
+    }
+    html, body {
+      margin:0; padding:0; font-family:"Times New Roman", serif; background:var(--beige); color:var(--ink);
+      scroll-behavior: smooth;
+    }
+    header {
+      position: sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background-color:#f5f0e6cc; border-bottom:2px solid var(--gold); z-index:10;
+    }
+    .container { max-width:1120px; margin:0 auto; padding:24px 20px; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:700; color:var(--espresso); font-size:1.15rem; }
+    .brand .logo { width:36px; height:36px; border-radius:8px; background:linear-gradient(145deg,#a06b3b,#7b4b2a); display:grid; place-items:center; color:#fff; font-weight:900; }
+    nav a { color:var(--ink); text-decoration:none; margin:0 10px; padding:8px 10px; border-radius:8px; }
+    nav a:hover { background:var(--gold); color:#000; }
+    .hero { display:grid; grid-template-columns:1.15fr 1fr; gap:28px; align-items:center; padding:48px 0; }
+    .hero h1 { font-size:3rem; line-height:1.1; color:var(--espresso); margin:0 0 8px; }
+    .hero p.lead { font-size:1.2rem; margin:0 0 18px; }
+    .tag { display:inline-block; background:var(--gold); color:#000; padding:6px 12px; border-radius:999px; font-weight:700; letter-spacing:.2px; }
+    .cta { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .btn { border:2px solid var(--gold); color:var(--ink); background:transparent; padding:10px 16px; border-radius:12px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; }
+    .btn.fill { background:var(--gold); color:#000; }
+    .section { padding:40px 0; border-top:2px solid var(--gold); }
+    .footer { padding:24px 0; border-top:2px solid var(--gold); text-align:center; font-size:.95rem; background:var(--foam); }
+    .muted { opacity:.8; }
+    @media (max-width:900px) {
+      .hero { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo">☕</span> Brew & Coffee</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="loyalty.html">Loyalty</a>
+        <a href="activities.html">Activities</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <div>
+        <span class="tag">Student‑Focused Café • Bukhara State University</span>
+        <h1>Welcome to Brew & Coffee</h1>
+        <p class="lead">Where you can study, relax, connect — with free Wi‑Fi, charging points, and community vibes built just for you.</p>
+        <div class="cta">
+          <a class="btn fill" href="menu.html">See Our Menu</a>
+          <a class="btn" href="loyalty.html">Get Loyalty Card</a>
+        </div>
+      </div>
+      <div>
+        <img src="images/cafe1.jpg" alt="Interior of student‑friendly café" style="width:100%; border-radius:12px;">
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <h2 style="color:var(--espresso); margin-top:0;">Why Choose Us</h2>
+      <div class="card">
+        <ul>
+          <li>Free high‑speed Wi‑Fi across the café</li>
+          <li>Charging stations at nearly every seat</li>
+          <li>Student‑priced drinks & snacks</li>
+          <li>Part‑time opportunities for students to work here</li>
+          <li>Weekly social events to meet, learn, unwind</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="y"></span> Brew & Coffee — Sip. Study. Connect.
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

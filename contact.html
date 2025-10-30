@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Brew & Coffee • Contact</title>
+  <style>
+    :root {
+      --beige: #F5F0E6;
+      --gold: #C7A140;
+      --espresso: #5A3C28;
+      --ink: #2B1B0F;
+      --foam: #FFFFFF;
+    }
+    html, body { margin:0; padding:0; font-family:"Times New Roman", serif; background:var(--beige); color:var(--ink); scroll-behavior: smooth;}
+    header { position: sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background-color:#f5f0e6cc; border-bottom:2px solid var(--gold); z-index:10;}
+    .container { max-width:1120px; margin:0 auto; padding:24px 20px;}
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px;}
+    .brand { display:flex; align-items:center; gap:12px; font-weight:700; color:var(--espresso); font-size:1.15rem;}
+    .brand .logo { width:36px; height:36px; border-radius:8px; background:linear-gradient(145deg,#a06b3b,#7b4b2a); display:grid; place-items:center; color:#fff; font-weight:900;}
+    nav a { color:var(--ink); text-decoration:none; margin:0 10px; padding:8px 10px; border-radius:8px;}
+    nav a:hover { background:var(--gold); color:#000;}
+    .section { padding:40px 0; border-top:2px solid var(--gold); }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;}
+    .card { background:var(--foam); border:1px solid #e8dcc7; border-radius:16px; padding:18px; }
+    .footer { padding:24px 0; border-top:2px solid var(--gold); text-align:center; font-size:.95rem; background:var(--foam); }
+    .muted { opacity:.8; }
+    @media (max-width:900px) { .grid-3 { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo">☕</span> Brew & Coffee</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="loyalty.html">Loyalty</a>
+        <a href="activities.html">Activities</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section" id="contact">
+      <h2 style="color:var(--espresso);margin-top:0">Find Us</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Location</h3><p>Bukhara State University, near the main library entrance.</p></div>
+        <div class="card"><h3>Hours</h3><p>Mon–Sat: 08:00–21:00<br>Sun: <strong>Closed</strong></p></div>
+        <div class="card"><h3>Contact</h3><p>Email: hello@brewandcoffee.example<br>Telegram: @brewandcoffee</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> Brew & Coffee — Sip. Study. Connect.
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Brew & Coffee • Menu</title>
+  <style>
+    :root {
+      --beige: #F5F0E6;
+      --gold: #C7A140;
+      --espresso: #5A3C28;
+      --ink: #2B1B0F;
+      --foam: #FFFFFF;
+    }
+    html, body {
+      margin:0; padding:0; font-family:"Times New Roman", serif; background:var(--beige); color:var(--ink);
+      scroll-behavior: smooth;
+    }
+    header { position: sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background-color:#f5f0e6cc; border-bottom:2px solid var(--gold); z-index:10; }
+    .container { max-width:1120px; margin:0 auto; padding:24px 20px; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:700; color:var(--espresso); font-size:1.15rem; }
+    .brand .logo { width:36px; height:36px; border-radius:8px; background:linear-gradient(145deg,#a06b3b,#7b4b2a); display:grid; place-items:center; color:#fff; font-weight:900; }
+    nav a { color:var(--ink); text-decoration:none; margin:0 10px; padding:8px 10px; border-radius:8px; }
+    nav a:hover { background:var(--gold); color:#000; }
+    .section { padding:40px 0; border-top:2px solid var(--gold); }
+    .menu { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .card { background:var(--foam); border:1px solid #e8dcc7; border-radius:16px; padding:18px; }
+    .card h3 { margin:0 0 8px; color:var(--espresso);}
+    .pill { display:inline-block; border:1px solid var(--gold); border-radius:999px; padding:6px 12px; margin:4px 6px 0 0;}
+    .footer { padding:24px 0; border-top:2px solid var(--gold); text-align:center; font-size:.95rem; background:var(--foam); }
+    .muted { opacity:.8; }
+    @media (max-width:900px) {
+      .menu { grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo">☕</span> Brew & Coffee</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="loyalty.html">Loyalty</a>
+        <a href="activities.html">Activities</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section" id="menu">
+      <h2 style="color:var(--espresso);margin-top:0">Menu Highlights</h2>
+
+      <div style="margin-bottom:16px">
+        <button class="btn" onclick="filterMenu('all')">All</button>
+        <button class="btn" onclick="filterMenu('coffee')">Coffee</button>
+        <button class="btn" onclick="filterMenu('tea')">Tea & Soda</button>
+        <button class="btn" onclick="filterMenu('desserts')">Desserts</button>
+      </div>
+
+      <div class="menu">
+        <div class="card menu-item" data-cat="coffee">
+          <h3>Signature Brews</h3>
+          <ul>
+            <li>Espresso — <b>10,000 soʻm</b></li>
+            <li>Americano — <b>15,000 soʻm</b></li>
+            <li>Latte — <b>20,000 soʻm</b></li>
+            <li>Cappuccino — <b>20,000 soʻm</b></li>
+            <li>Hot Chocolate — <b>15,000 soʻm</b></li>
+          </ul>
+        </div>
+
+        <div class="card menu-item" data-cat="tea">
+          <h3>Teas & Soda</h3>
+          <ul>
+            <li>Black Tea — <b>10,000 soʻm</b></li>
+            <li>Green Tea — <b>10,000 soʻm</b></li>
+            <li>Herbal Tea — <b>12,000 soʻm</b></li>
+          </ul>
+        </div>
+
+        <div class="card menu-item" data-cat="desserts">
+          <h3>Sweet Bites</h3>
+          <ul>
+            <li>Croissant — <b>20,000 soʻm</b></li>
+            <li>Cheesecake — <b>20,000 soʻm</b></li>
+            <li>Carrot Cake — <b>20,000 soʻm</b></li>
+            <li>Curd Cheesecake — <b>20,000 soʻm</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:8px">*Prices include student discount • full menu available in‑store.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="y"></span> Brew & Coffee — Sip. Study. Connect.
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    function filterMenu(category) {
+      const items = document.querySelectorAll('.menu-item');
+      items.forEach(item => {
+        const match = item.getAttribute('data-cat') === category;
+        item.style.display = (category === 'all' || match) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

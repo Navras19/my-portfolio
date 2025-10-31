@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brew & Coffee • Bukhara State University</title>
+  <title>Brew & Coffee • About Us</title>
   <style>
     :root {
       --beige: #f8f4ec;
@@ -13,7 +13,10 @@
       --ink: #2b1b0f;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -27,7 +30,7 @@
       position: sticky;
       top: 0;
       border-bottom: 2px solid var(--gold);
-      z-index: 99;
+      z-index: 100;
     }
 
     nav {
@@ -49,37 +52,40 @@
     }
 
     .hero {
+      position: relative;
       background: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5') center/cover no-repeat;
-     
-      background: var(--foam); /* or just white: #ffffff */
-      color: var(--espresso);
       padding: 100px 32px;
       text-align: center;
-}
-    
-}
-      padding: 100px 32px;
-      text-align: center;
+      color: #ffffff;
     }
-    
-   .hero h1 {
-  color: var(--espresso);
-}
 
-.hero p {
-  color: var(--ink);
-}
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
 
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: auto;
+    }
 
-    .hero h1 {
+    .hero-content h1 {
       font-size: 3rem;
       margin: 0 0 12px;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     }
 
-    .hero p {
+    .hero-content p {
       font-size: 1.25rem;
-      max-width: 600px;
-      margin: auto;
+      line-height: 1.5;
+      color: #f5f0ec;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     }
 
     .section {
@@ -131,37 +137,36 @@
     }
 
     @media(max-width:600px) {
-      .hero h1 { font-size: 2rem; }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <nav>
-   <div style="display:flex; align-items:center; gap:10px;">
-  <img src="logo.png" alt="Brew & Coffee Logo" style="height:100px;">
-  <strong>Brew & Coffee</strong>
-</div>
-
-
+      <div><strong>☕ Brew & Coffee</strong></div>
       <div>
         <a href="#about">About</a>
         <a href="#features">Features</a>
         <a href="#loyalty">Loyalty</a>
         <a href="#menu">Menu</a>
-        <a href="#events">Activities</a>
+        <a href="#activities">Activities</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>About Brew & Coffee</h1>
-    <p>A cozy, student‑first café where you can relax, study, and connect. Enjoy free Wi‑Fi, charging ports, loyalty rewards, and more.</p>
-  </div>
-</section>
-
+  <section class="hero" id="about">
+    <div class="hero-content">
+      <h1>About Brew & Coffee</h1>
+      <p>
+        A student‑first café where you can study, relax, and connect. Enjoy free Wi‑Fi, charging stations, loyalty rewards, and freshly brewed coffee — all made for you.
+      </p>
+    </div>
+  </section>
 
   <section class="section" id="features">
     <h2>Student‑First Features</h2>
@@ -205,22 +210,22 @@
     </div>
   </section>
 
-  <section class="section" id="events">
+  <section class="section" id="activities">
     <h2>Student Activity Days</h2>
     <div class="activities">
-      <div class="card"><h3>Tue Afternoon</h3><p>📖 Book Review Club — swap & discuss books.</p></div>
-      <div class="card"><h3>Wed Evening</h3><p>🎤 Poetic Evenings — open mic poetry & stories.</p></div>
-      <div class="card"><h3>Fri Evening</h3><p>🎨 Creative Café — design jams & art popups.</p></div>
-      <div class="card"><h3>Sat Evening</h3><p>🎸 Acoustic Night — live music by students.</p></div>
+      <div class="card"><h3>Tue Afternoon</h3><p>Book Review Club — swap & discuss books.</p></div>
+      <div class="card"><h3>Wed Evening</h3><p>Poetic Evenings — open mic poetry & stories.</p></div>
+      <div class="card"><h3>Fri Evening</h3><p>Creative Café — design jams & art pop‑ups.</p></div>
+      <div class="card"><h3>Sat Evening</h3><p>Acoustic Night — live music by students.</p></div>
     </div>
   </section>
 
   <section class="section" id="contact">
     <h2>Visit Us</h2>
     <div class="features">
-      <div class="card"><h3>📍 Location</h3><p>Bukhara State University, Faculty of foreign languages, Khamza Street.</p></div>
+      <div class="card"><h3>📍 Location</h3><p>Bukhara State University, near the main library.</p></div>
       <div class="card"><h3>⏰ Hours</h3><p>Mon–Sat: 08:00–21:00<br>Sun: Closed</p></div>
-      <div class="card"><h3>📬 Contact</h3><p>Email: brew&coffee@gmail.com<br>Telegram: @brew&coffee</p></div>
+      <div class="card"><h3>📬 Contact</h3><p>Email: hello@brewandcoffee.example<br>Telegram: @brewandcoffee</p></div>
     </div>
   </section>
 
@@ -231,5 +236,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
